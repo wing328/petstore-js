@@ -7,14 +7,17 @@
   "scripts": {
     "build": "babel src -d dist",
     "prepack": "npm run build",
-    "test": "mocha --compilers js:babel-core/register --recursive"
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "browser": {
     "fs": false
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "superagent": "3.7.0"
+    "superagent": "3.7.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -26,5 +29,6 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "snyk": true
 }
